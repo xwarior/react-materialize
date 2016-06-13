@@ -13,6 +13,9 @@ class PropTable extends React.Component {
 
     componentWillMount() {
         this.propsData = this.context.metadata[this.props.component];
+        if (this.propsData == null) {
+            this.propsData = {props: {}};
+        }
     }
 
     render() {
