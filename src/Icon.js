@@ -4,19 +4,25 @@ import cx from 'classnames';
 
 class Icon extends Component {
   render () {
+    const className = this.props.className;
+    var newProps = Object.assign({}, this.props);
+    delete newProps.className;
+
     let classes = {
       'material-icons': true
     };
     constants.PLACEMENTS.forEach(p => {
       classes[p] = this.props[p];
+      delete newProps[p];
     });
 
     constants.ICON_SIZES.forEach(s => {
       classes[s] = this.props[s];
+      delete newProps[p];
     });
 
     return (
-      <i className={cx(classes, this.props.className)}>{this.props.children}</i>
+      <i className={cx(classes, className)} { ...newProps }>{this.props.children}</i>
     );
   }
 }
