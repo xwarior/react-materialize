@@ -20,7 +20,7 @@ describe('<Icon />', () => {
   });
 
   it('passes the provided properties in', () => {
-    wrapper = shallow(<Icon attribute="value">cloud</Icon>);
-    expect(wrapper.equals(<i className="material-icons" attribute="value">cloud</i>)).to.equal(true);
+    wrapper = shallow(<Icon title='value'>cloud</Icon>);
+    expect(wrapper.equals(<i className='material-icons' title='value'>cloud</i>)).to.equal(true);
   });
 });
